@@ -1,0 +1,14 @@
+.texto {
+  max-width: 70ch;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  color: var(--cafe);
+}
+h2 {
+  margin-top: 2rem;
+  font-size: 1.35rem;
+}
+.botao {
+  margin-top: 2rem;
+}

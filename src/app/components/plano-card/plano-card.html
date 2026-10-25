@@ -1,0 +1,13 @@
+<article class="card" [class.destaque]="plano().destaque">
+  @if (plano().destaque) {
+    <span class="selo">Mais escolhido</span>
+  }
+  <h3>{{ plano().nome }}</h3>
+  <p class="preco">{{ plano().preco | currency: 'BRL' }}<span class="periodo">/mês</span></p>
+  <ul>
+    @for (item of plano().itens; track item) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+  <button class="botao" type="button" (click)="escolher.emit(plano().nome)">Quero este</button>
+</article>

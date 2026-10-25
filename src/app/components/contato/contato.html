@@ -1,0 +1,69 @@
+<section id="contato" class="faixa">
+  <div class="secao">
+    <h2 class="titulo-secao">Fale com a gente</h2>
+    <p class="subtitulo">Dúvidas, sugestões ou quer assinar? Responderemos em até 1 dia útil.</p>
+
+    <form class="formulario" [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input
+          id="nome"
+          type="text"
+          formControlName="nome"
+          autocomplete="name"
+          [attr.aria-invalid]="invalido('nome')"
+          aria-describedby="erro-nome"
+        />
+        @if (invalido('nome')) {
+          <small id="erro-nome">Diga seu nome.</small>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          autocomplete="email"
+          [attr.aria-invalid]="invalido('email')"
+          aria-describedby="erro-email"
+        />
+        @if (invalido('email')) {
+          <small id="erro-email">
+            {{
+              form.controls.email.hasError('required') ? 'Informe seu e-mail.' : 'E-mail inválido.'
+            }}
+          </small>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="mensagem">Mensagem</label>
+        <textarea
+          id="mensagem"
+          rows="5"
+          formControlName="mensagem"
+          [attr.aria-invalid]="invalido('mensagem')"
+          aria-describedby="erro-mensagem"
+        ></textarea>
+        @if (invalido('mensagem')) {
+          <small id="erro-mensagem">Escreva sua mensagem.</small>
+        }
+      </div>
+
+      <button class="botao" type="submit" [disabled]="enviando()">
+        {{ enviando() ? 'Enviando...' : 'Enviar' }}
+      </button>
+
+      <div aria-live="polite">
+        @if (enviado()) {
+          <p class="aviso sucesso">Mensagem enviada! Logo entraremos em contato. ☕</p>
+        }
+        @if (erro()) {
+          <p class="aviso erro">Não foi possível enviar agora. Tente novamente em instantes.</p>
+        }
+      </div>
+    </form>
+  </div>
+</section>

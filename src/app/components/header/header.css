@@ -1,0 +1,109 @@
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--cafe);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+}
+.topo-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+}
+.marca {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--creme);
+  text-decoration: none;
+}
+
+/* Botão "hambúrguer": 3 risquinhos que viram um X */
+.botao-menu {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: transparent;
+  border: 2px solid var(--creme);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+.icone,
+.icone::before,
+.icone::after {
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  background: var(--creme);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+.icone {
+  position: relative;
+}
+.icone::before,
+.icone::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.icone::before {
+  top: -6px;
+}
+.icone::after {
+  top: 6px;
+}
+.icone.aberto {
+  background: transparent;
+}
+.icone.aberto::before {
+  transform: translateY(6px) rotate(45deg);
+}
+.icone.aberto::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Celular: menu escondido até clicar no botão */
+.menu {
+  display: none;
+  flex-basis: 100%;
+  flex-direction: column;
+  padding-top: 0.75rem;
+}
+.menu.aberto {
+  display: flex;
+}
+.menu a {
+  color: var(--creme);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+}
+.menu a:hover {
+  color: var(--caramelo-claro);
+}
+
+/* Computador: menu sempre visível, em linha */
+@media (min-width: 768px) {
+  .botao-menu {
+    display: none;
+  }
+  .menu,
+  .menu.aberto {
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    gap: 1.75rem;
+    padding: 0;
+  }
+  .menu a {
+    border: none;
+    padding: 0.25rem 0;
+  }
+}

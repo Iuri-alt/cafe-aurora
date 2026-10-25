@@ -1,0 +1,9 @@
+<section id="planos" class="secao">
+  <h2 class="titulo-secao">Escolha seu plano</h2>
+  <p class="subtitulo">Sem taxa de adesão. Cancele quando quiser.</p>
+  <div class="grade">
+    @for (plano of planos; track plano.nome) {
+      <app-plano-card [plano]="plano" (escolher)="aoEscolher($event)" />
+    }
+  </div>
+</section>

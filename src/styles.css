@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Variáveis: cores e medidas usadas no site todo */
+:root {
+  --cafe: #3b2416;
+  --creme: #f7f1e8;
+  --creme-escuro: #efe5d6;
+  --caramelo: #a8561a;
+  --caramelo-claro: #e2a46b;
+  --texto: #2a211c;
+  --texto-suave: #6b5a4e;
+  --borda: #e3d6c4;
+  --erro: #b3261e;
+
+  --fonte-texto: 'Inter', system-ui, sans-serif;
+  --fonte-titulo: 'Fraunces', Georgia, serif;
+
+  --raio: 8px;
+  --raio-grande: 14px;
+  --sombra: 0 2px 6px rgb(59 36 22 / 0.08);
+  --sombra-forte: 0 10px 24px rgb(59 36 22 / 0.16);
+
+  --largura-max: 1100px;
+  --altura-topo: 4.5rem;
+}
+
+/* 2. Base: tira margens do navegador e define a fonte */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--altura-topo);
+}
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  color: var(--texto);
+  background: var(--creme);
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--caramelo);
+  outline-offset: 2px;
+}
+
+/* 3. Uma seção padrão: centralizada e com respiro */
+.secao {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+.titulo-secao {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--cafe);
+  text-align: center;
+}
+.subtitulo {
+  text-align: center;
+  color: var(--texto-suave);
+  margin: 0 auto 2.5rem;
+  max-width: 40ch;
+}
+@media (min-width: 768px) {
+  .secao {
+    padding-block: 5rem;
+  }
+}
+
+/* 4. Grade de cartões: 1 coluna no celular, várias no computador */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 1.5rem;
+}
+
+/* 5. Botão padrão */
+.botao {
+  display: inline-block;
+  background: var(--cafe);
+  color: var(--creme);
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: var(--raio);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.botao:hover {
+  background: var(--caramelo);
+}
+.botao:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* 6. Respeita quem pediu "menos animação" no sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,28 @@
+.rodape {
+  background: var(--cafe);
+  color: var(--creme);
+}
+.rodape-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+.rodape p {
+  margin: 0;
+}
+.rodape a {
+  color: var(--creme);
+}
+.rodape a:hover {
+  color: var(--caramelo-claro);
+}
+@media (min-width: 768px) {
+  .rodape-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

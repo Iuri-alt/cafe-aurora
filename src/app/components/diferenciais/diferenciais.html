@@ -1,0 +1,14 @@
+<section id="diferenciais" class="faixa">
+  <div class="secao">
+    <h2 class="titulo-secao">Por que o Café Aurora?</h2>
+    <div class="grade">
+      @for (item of diferenciais; track item.titulo) {
+        <article class="cartao">
+          <span class="icone" aria-hidden="true">{{ item.icone }}</span>
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.texto }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

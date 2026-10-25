@@ -1,0 +1,22 @@
+<header class="topo">
+  <div class="topo-conteudo">
+    <a class="marca" routerLink="/" (click)="fecharMenu()">☕ Café Aurora</a>
+
+    <button
+      class="botao-menu"
+      type="button"
+      aria-controls="menu-principal"
+      [attr.aria-expanded]="menuAberto()"
+      [attr.aria-label]="menuAberto() ? 'Fechar menu' : 'Abrir menu'"
+      (click)="alternarMenu()"
+    >
+      <span class="icone" [class.aberto]="menuAberto()" aria-hidden="true"></span>
+    </button>
+
+    <nav id="menu-principal" class="menu" [class.aberto]="menuAberto()" aria-label="Principal">
+      @for (link of links; track link.ancora) {
+        <a routerLink="/" [fragment]="link.ancora" (click)="fecharMenu()">{{ link.rotulo }}</a>
+      }
+    </nav>
+  </div>
+</header>
