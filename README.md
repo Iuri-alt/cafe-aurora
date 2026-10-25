@@ -9,6 +9,7 @@ O projeto combina uma experiência visual agradável com uma estrutura organizad
 O **Café Aurora** é um projeto de desenvolvimento front-end que busca transmitir a atmosfera de uma cafeteria por meio de uma página intuitiva e visualmente atrativa.
 
 A landing page foi desenvolvida com Angular, utilizando tecnologias web para estruturar o conteúdo, estilizar a interface e implementar os elementos da página.
+Link da pagina: [Acesse aqui](https://cafe-aurora-red.vercel.app/)
 
 ## 🚀 Tecnologias utilizadas
 
@@ -82,13 +83,6 @@ ng build
 
 Os arquivos compilados serão gerados no diretório de saída configurado pelo Angular.
 
-## 📸 Demonstração
-
-Adicione aqui uma captura de tela da landing page para apresentar o resultado visual do projeto.
-
-<!-- Substitua pelo caminho real da imagem quando adicioná-la ao repositório. -->
-<!-- ![Café Aurora](./screenshots/cafe-aurora.png) -->
-
 ## 📚 Aprendizados
 
 Este projeto permite praticar conceitos importantes de desenvolvimento front-end, incluindo:
@@ -100,11 +94,7 @@ Este projeto permite praticar conceitos importantes de desenvolvimento front-end
 - Desenvolvimento e execução de aplicações web.
 
 ## 👨‍💻 Autor
-
 **Iuri Antonio da Silva**
-
-Desenvolvedor em formação, interessado em desenvolvimento web e na criação de interfaces modernas e funcionais.
-
+Desenvolvedor em formação, interessado em desenvolvimento Fullstack e na criação de interfaces modernas e funcionais.
 ---
-
 ⭐ Se você gostou do projeto, considere deixar uma estrela no repositório!
